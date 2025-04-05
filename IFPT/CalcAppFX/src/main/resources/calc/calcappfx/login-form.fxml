@@ -12,14 +12,14 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.calcappfx.loginController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="190.0" style="-fx-background-color: #7fbbf0;">
+      <AnchorPane prefHeight="400.0" prefWidth="234.0" style="-fx-background-color: #7fbbf0;">
          <children>
-            <ImageView fitHeight="75.0" fitWidth="202.0" layoutX="3.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="75.0" fitWidth="202.0" layoutX="2.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/logo.png" />
                </image>
             </ImageView>
-            <Label fx:id="emailLabel" layoutX="22.0" layoutY="216.0" text="ifpt@support.com">
+            <Label fx:id="emailLabel" layoutX="14.0" layoutY="234.0" text="ifpt@support.com">
                <font>
                   <Font name="Arial Rounded MT Bold" size="16.0" />
                </font>
@@ -28,7 +28,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="421.0">
          <children>
-            <ImageView fitHeight="104.0" fitWidth="160.0" layoutX="142.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="104.0" fitWidth="160.0" layoutX="120.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/lock.png" />
                </image>
@@ -53,7 +53,7 @@
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </TextField>
-            <Button fx:id="loginButton" layoutX="136.0" layoutY="292.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #7fbbf0;" text="Login">
+            <Button fx:id="loginButton" layoutX="147.0" layoutY="291.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="35.0" prefWidth="153.0" style="-fx-background-color: #7fbbf0;" text="Login">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
@@ -61,12 +61,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="signUpLabel" layoutX="136.0" layoutY="358.0" text="Not a user?">
+            <Label fx:id="signUpLabel" layoutX="152.0" layoutY="358.0" text="Not a user?">
                <font>
                   <Font name="Arial Rounded MT Bold" size="16.0" />
                </font>
             </Label>
-            <Button fx:id="signUpbutton" layoutX="223.0" layoutY="356.0" mnemonicParsing="false" onAction="#loadSignUp" style="-fx-background-color: transparent;" text="Sign Up!" textFill="#1c3feb" underline="true">
+            <Button fx:id="signUpbutton" layoutX="237.0" layoutY="356.0" mnemonicParsing="false" onAction="#loadSignUp" style="-fx-background-color: transparent;" text="Sign Up!" textFill="#1c3feb" underline="true">
                <font>
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
