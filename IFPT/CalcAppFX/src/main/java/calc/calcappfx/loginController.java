@@ -27,7 +27,6 @@ public class loginController implements Initializable {
 
     private MongoCollection<Document> userCollection;
 
-    // Constructor
     public loginController() {
         // Get the MongoDB user collection
         userCollection = MongoDBUtil.getDatabase().getCollection("users");
@@ -65,7 +64,6 @@ public class loginController implements Initializable {
         }
     }
 
-    // Action to go to the sign-up page
     public void loadSignUp() {
         try {
             mainApp.changePage("sign-up.fxml", "Sign-Up page");

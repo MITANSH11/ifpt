@@ -2,6 +2,7 @@ package calc.calcappfx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -57,6 +58,15 @@ public class FirstFrameController implements Initializable {
     private void openAssetAllocation() {
         try {
             mainApp.changePage("asset-allocation-view.fxml", "Asset Allocation");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void logoutAction(){
+        try {
+            mainApp.changePage("login-form.fxml", "Login - IFPT");
         } catch (IOException e) {
             e.printStackTrace();
         }

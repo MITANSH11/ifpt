@@ -11,8 +11,8 @@ public class MongoDBUtil {
 
     static {
         // Establish connection to MongoDB
-        mongoClient = MongoClients.create("mongodb://localhost:27017"); // Replace with your MongoDB URI
-        database = mongoClient.getDatabase("ifpt_DB"); // Replace with your database name
+        mongoClient = MongoClients.create("mongodb://localhost:27017");
+        database = mongoClient.getDatabase("ifpt_DB");
     }
 
     public static MongoDatabase getDatabase() {

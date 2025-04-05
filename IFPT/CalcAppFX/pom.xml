@@ -82,15 +82,6 @@
       <artifactId>mongodb-driver-core</artifactId>
       <version>5.4.0</version>
     </dependency>
-
-    <!-- Optional SLF4J dependency -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.6</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
     <dependency>
       <groupId>org.mindrot</groupId>
       <artifactId>jbcrypt</artifactId>

@@ -12,11 +12,11 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.calcappfx.signUpController">
     <children>
-        <AnchorPane prefHeight="400.0" prefWidth="190.0" style="-fx-background-color: #7fbbf0;">
+        <AnchorPane prefHeight="400.0" prefWidth="230.0" style="-fx-background-color: #7fbbf0;">
             <children>
-                <ImageView fitHeight="104.0" fitWidth="158.0" layoutX="18.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="71.0" fitWidth="206.0" layoutX="-1.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../placeholder_logo.jpg" />
+                        <Image url="@../../img/logo.png" />
                     </image>
                 </ImageView>
                 <Label layoutX="22.0" layoutY="216.0" text="ifpt@support.com">

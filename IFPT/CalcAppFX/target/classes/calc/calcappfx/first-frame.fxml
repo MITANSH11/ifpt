@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -57,5 +58,13 @@
                 <Button fx:id="assetAllocationButton" onAction="#openAssetAllocation" prefHeight="30.0" prefWidth="198.0" styleClass="custom-button" text="Asset Allocation" />
          </children>
       </VBox>
+      <Button fx:id="logoutButton" layoutX="709.0" layoutY="549.0" mnemonicParsing="false" onAction="#logoutAction" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #fc2b2b;" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
     </children>
 </AnchorPane>
