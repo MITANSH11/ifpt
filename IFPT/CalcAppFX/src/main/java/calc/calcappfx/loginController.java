@@ -52,17 +52,15 @@ public class loginController implements Initializable {
             if (BCrypt.checkpw(password, storedHashedPassword)) {
                 loginMessageLabel.setText("Login successful!");
                 try {
-                    mainApp.changePage("first-frame.fxml", "Home page");
+                    mainApp.changePage("first-frame.fxml", "IFPT");
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
 
             } else {
-                // Password does not match
                 loginMessageLabel.setText("Incorrect username or password");
             }
         } else {
-            // User not found
             loginMessageLabel.setText("Incorrect username or password");
         }
     }
@@ -78,6 +76,5 @@ public class loginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // This method can be used to initialize things if needed when the FXML file is loaded
     }
 }

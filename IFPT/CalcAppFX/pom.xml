@@ -97,20 +97,6 @@
       <version>0.4</version>
     </dependency>
 
-
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>17.0.6</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-fxml</artifactId>
-      <version>17.0.6</version>
-      <scope>compile</scope>
-    </dependency>
-
   </dependencies>
 
   <build>
@@ -133,7 +119,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>calc.calcappfx/calc.calcappfx.testMainApp</mainClass>
+              <mainClass>calc.calcappfx/calc.calcappfx.mainApp</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

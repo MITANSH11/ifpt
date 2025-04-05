@@ -27,7 +27,6 @@ public class signUpController implements Initializable {
 
     // Constructor
     public signUpController() {
-        // Get the MongoDB user collection
         userCollection = MongoDBUtil.getDatabase().getCollection("users");
     }
 
@@ -58,16 +57,13 @@ public class signUpController implements Initializable {
             return;
         }
 
-        // Hash the password before storing it
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
-        // Insert the new user into the MongoDB users collection
         Document newUser = new Document("username", username)
                 .append("password", hashedPassword);
 
         userCollection.insertOne(newUser);
 
-        // Show success message
         showAlert("Success", "User successfully registered!", AlertType.INFORMATION);
 
         // Clear the input fields
@@ -77,10 +73,8 @@ public class signUpController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // This method can be used to initialize things if needed when the FXML file is loaded
     }
 
-    // Helper method to show an alert message
     private void showAlert(String title, String message, AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
