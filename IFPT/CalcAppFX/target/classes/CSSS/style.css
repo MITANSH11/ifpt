@@ -1,6 +1,6 @@
 /* Set background image for the whole UI */
 #root {
-    -fx-background-image: url("img.jpg");
+    -fx-background-image: url("image.jpg");
     -fx-background-size: cover;
     -fx-background-position: center;
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="lumpsumRoot" xmlns:fx="http://javafx.com/fxml" fx:controller="calc.calcappfx.LumpsumController">
+    <children>
+        <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+            <Label text="Lumpsum Investment Calculator" styleClass="heading"/>
+
+            <HBox spacing="10">
+                <Label text="Amount Invested:"/>
+                <TextField fx:id="investedAmountField"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Investment Duration (Years):"/>
+                <TextField fx:id="yearsField"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Expected Annual Return (%):"/>
+                <TextField fx:id="returnRateField"/>
+            </HBox>
+
+            <Button text="Calculate" onAction="#calculateLumpsum"/>
+
+            <Label fx:id="totalInvestedLabel" styleClass="result-label"/>
+            <Label fx:id="maturityValueLabel" styleClass="result-label"/>
+            <Label fx:id="totalReturnLabel" styleClass="result-label"/>
+
+            <PieChart fx:id="pieChart" prefHeight="250"/>
+        </VBox>
+    </children>
+    <Button fx:id="backButton" layoutX="14.0" layoutY="626.0" onAction="#backToMain" styleClass="back-button" text="Back" />
+
+</AnchorPane>

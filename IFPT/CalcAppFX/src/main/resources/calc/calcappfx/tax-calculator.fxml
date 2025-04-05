@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 
-<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.calcappfx.TaxController">
+<AnchorPane fx:id="taxRoot" xmlns:fx="http://javafx.com/fxml" fx:controller="calc.calcappfx.TaxController">
+    <children>
+        <GridPane layoutX="20" layoutY="20" hgap="10" vgap="10" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
 
-    <!-- Title -->
-    <Label layoutX="230.0" layoutY="34.0" styleClass="title-label" text="Tax Calculator" />
+            <Label text="Income:" GridPane.rowIndex="0"/>
+            <TextField fx:id="incomeField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-    <!-- Income Input -->
-    <Label layoutX="50.0" layoutY="100.0" styleClass="input-label" text="Total Income (₹):" />
-    <TextField fx:id="incomeField" layoutX="250.0" layoutY="98.0" prefWidth="250.0" styleClass="input-field" />
+            <Label text="Regime:" GridPane.rowIndex="1"/>
+            <ChoiceBox fx:id="regimeChoice" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-    <!-- Deductions -->
-    <Label layoutX="50.0" layoutY="150.0" styleClass="input-label" text="Deductions (₹):" />
-    <TextField fx:id="deductionsField" layoutX="250.0" layoutY="148.0" prefWidth="250.0" styleClass="input-field" />
+            <Label text="80C Deduction:" GridPane.rowIndex="2"/>
+            <TextField fx:id="deduction80CField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-    <!-- Regime Selection -->
-    <Label layoutX="50.0" layoutY="200.0" styleClass="input-label" text="Tax Regime:" />
-    <ChoiceBox fx:id="regimeChoice" layoutX="250.0" layoutY="198.0" prefWidth="250.0" styleClass="input-field" />
+            <Label text="80D Deduction:" GridPane.rowIndex="3"/>
+            <TextField fx:id="deduction80DField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-    <!-- Calculate Button -->
-    <Button fx:id="calculateButton" layoutX="250.0" layoutY="250.0" onAction="#calculateTax" styleClass="calculate-button" text="Calculate" />
+            <Label text="80E Deduction:" GridPane.rowIndex="4"/>
+            <TextField fx:id="deduction80EField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
-    <!-- Result -->
-    <Label layoutX="50.0" layoutY="320.0" styleClass="result-label" text="Estimated Tax (₹):" />
-    <Label fx:id="taxLabel" layoutX="250.0" layoutY="320.0" styleClass="result-value" text="0.00" />
+            <Label text="80G Deduction:" GridPane.rowIndex="5"/>
+            <TextField fx:id="deduction80GField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
 
-    <!-- Back Button -->
-    <Button fx:id="backButton" layoutX="50.0" layoutY="431.0" onAction="#backToMain" styleClass="back-button" text="Back" />
+            <Label text="Other Deduction:" GridPane.rowIndex="6"/>
+            <TextField fx:id="otherDeductionField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Button text="Calculate Tax" onAction="#calculateTax" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <TextArea fx:id="resultArea" layoutX="400" layoutY="20" prefWidth="350" prefHeight="200"/>
+        <PieChart fx:id="deductionChart" layoutX="400" layoutY="230" prefWidth="350" prefHeight="200"/>
+    </children>
+    <Button fx:id="backButton" layoutX="14.0" layoutY="626.0" onAction="#backToMain" styleClass="back-button" text="Back" />
 
 </AnchorPane>

@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.calcappfx.SipController">
+<AnchorPane fx:id="sipRoot" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="calc.calcappfx.SipController"
+            prefHeight="550" prefWidth="600">
+    <children>
+        <VBox spacing="15" alignment="CENTER" layoutX="50" layoutY="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
 
-    <!-- Title -->
-    <Label layoutX="264.0" layoutY="34.0" styleClass="title-label" text="SIP Calculator" />
+            <Label text="SIP Calculator" styleClass="header-label"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Monthly Investment:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="monthlyInvestmentField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-    <!-- Monthly Investment Input -->
-    <Label layoutX="50.0" layoutY="100.0" styleClass="input-label" text="Monthly Investment (₹):" />
-    <TextField fx:id="monthlyInvestmentField" layoutX="250.0" layoutY="98.0" prefWidth="250.0" styleClass="input-field" />
+                <Label text="Investment Period (Years):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="investmentPeriodField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-    <!-- Expected Annual Return Rate -->
-    <Label layoutX="50.0" layoutY="150.0" styleClass="input-label" text="Annual Return Rate (%):" />
-    <TextField fx:id="returnRateField" layoutX="250.0" layoutY="148.0" prefWidth="250.0" styleClass="input-field" />
+                <Label text="Expected Return Rate (%):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="expectedReturnRateField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
 
-    <!-- Investment Period -->
-    <Label layoutX="50.0" layoutY="200.0" styleClass="input-label" text="Investment Period (years):" />
-    <TextField fx:id="investmentPeriodField" layoutX="250.0" layoutY="198.0" prefWidth="250.0" styleClass="input-field" />
+            <Button text="Calculate" onAction="#calculateSIP"/>
+            <Label fx:id="investedAmountLabel" styleClass="result-label"/>
+            <Label fx:id="resultLabel" styleClass="result-label"/>
+            <PieChart fx:id="pieChart" prefWidth="400" prefHeight="300"/>
 
-    <!-- Calculate Button -->
-    <Button fx:id="calculateButton" layoutX="250.0" layoutY="250.0" onAction="#calculateSIP" styleClass="calculate-button" text="Calculate" />
-
-    <!-- Results -->
-    <Label layoutX="50.0" layoutY="320.0" styleClass="result-label" text="Total Investment (₹):" />
-    <Label fx:id="totalInvestmentLabel" layoutX="250.0" layoutY="320.0" styleClass="result-value" text="0.00" />
-
-    <Label layoutX="50.0" layoutY="350.0" styleClass="result-label" text="Estimated Returns (₹):" />
-    <Label fx:id="estimatedReturnsLabel" layoutX="250.0" layoutY="350.0" styleClass="result-value" text="0.00" />
-
-    <Label layoutX="50.0" layoutY="380.0" styleClass="result-label" text="Total Value (₹):" />
-    <Label fx:id="totalValueLabel" layoutX="250.0" layoutY="380.0" styleClass="result-value" text="0.00" />
-
-    <!-- Back Button -->
-    <Button fx:id="backButton" layoutX="50.0" layoutY="431.0" onAction="#backToMain" styleClass="back-button" text="Back" />
+            <Button fx:id="backButton" layoutX="14.0" layoutY="626.0" onAction="#backToMain" styleClass="back-button" text="Back" />
+        </VBox>
+    </children>
 </AnchorPane>

@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="calc.calcappfx.AssetAllocationController">
+<AnchorPane fx:id="assetRoot" xmlns:fx="http://javafx.com/fxml" fx:controller="calc.calcappfx.AssetAllocationController">
+    <children>
+        <VBox spacing="15" alignment="TOP_CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <Label text="Asset Allocation Calculator" styleClass="heading"/>
 
-    <!-- Title -->
-    <Label layoutX="180.0" layoutY="30.0" styleClass="title-label" text="Asset Allocation Calculator" />
+            <HBox spacing="20">
+                <VBox spacing="10">
+                    <Label text="Monthly Income:"/>
+                    <TextField fx:id="incomeField"/>
 
-    <!-- Monthly Income -->
-    <Label layoutX="50.0" layoutY="100.0" styleClass="input-label" text="Monthly Income (₹):" />
-    <TextField fx:id="monthlyIncomeField" layoutX="250.0" layoutY="98.0" prefWidth="250.0" styleClass="input-field" />
+                    <Label text="Percentage to Invest:"/>
+                    <TextField fx:id="percentToInvestField"/>
 
-    <!-- Investment % -->
-    <Label layoutX="50.0" layoutY="150.0" styleClass="input-label" text="Investment %:" />
-    <TextField fx:id="investmentPercentageField" layoutX="250.0" layoutY="148.0" prefWidth="250.0" styleClass="input-field" />
+                    <Label text="Your Age:"/>
+                    <TextField fx:id="ageField"/>
 
-    <!-- Age -->
-    <Label layoutX="50.0" layoutY="200.0" styleClass="input-label" text="Your Age:" />
-    <TextField fx:id="ageField" layoutX="250.0" layoutY="198.0" prefWidth="250.0" styleClass="input-field" />
+                    <Button text="Calculate Allocation" onAction="#calculateAllocation" styleClass="btn"/>
+                    <Button fx:id="backButton" layoutX="14.0" layoutY="626.0" onAction="#backToMain" styleClass="back-button" text="Back" />
+                </VBox>
 
-    <!-- Calculate Button -->
-    <Button fx:id="calculateButton" layoutX="250.0" layoutY="250.0" onAction="#calculateAllocation"
-            styleClass="calculate-button" text="Calculate" />
-
-    <!-- Total Investment -->
-    <Label layoutX="50.0" layoutY="310.0" styleClass="result-label" text="Total Investment (₹):" />
-    <Label fx:id="totalInvestmentLabel" layoutX="250.0" layoutY="310.0" styleClass="result-value" text="0.00" />
-
-    <!-- Allocations -->
-    <Label fx:id="equityLabel" layoutX="250.0" layoutY="340.0" styleClass="result-breakdown" />
-    <Label fx:id="debtLabel" layoutX="250.0" layoutY="370.0" styleClass="result-breakdown" />
-    <Label fx:id="goldLabel" layoutX="250.0" layoutY="400.0" styleClass="result-breakdown" />
-    <Label fx:id="emergencyLabel" layoutX="250.0" layoutY="430.0" styleClass="result-breakdown" />
-
-    <!-- Back Button -->
-    <Button fx:id="backButton" layoutX="50.0" layoutY="431.0" onAction="#backToMain"
-            styleClass="back-button" text="Back" />
+                <VBox spacing="10" style="-fx-padding: 10;">
+                    <Label text="Results:"/>
+                    <TextArea fx:id="resultArea" editable="false" wrapText="true" prefWidth="300" prefHeight="200"/>
+                    <PieChart fx:id="pieChart" title="Recommended Investment Distribution" prefHeight="300" prefWidth="300"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
 </AnchorPane>

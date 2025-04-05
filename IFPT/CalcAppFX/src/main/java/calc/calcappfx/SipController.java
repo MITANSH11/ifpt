@@ -1,59 +1,54 @@
 package calc.calcappfx;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.*;
+import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
 
 public class SipController {
 
-    @FXML
-    private AnchorPane root; // Root pane for applying CSS
-    @FXML
-    private TextField monthlyInvestmentField, returnRateField, investmentPeriodField;
-    @FXML
-    private Label totalInvestmentLabel, estimatedReturnsLabel, totalValueLabel;
-    @FXML
-    private Button calculateButton, backButton;
-
-
+    @FXML private TextField monthlyInvestmentField;
+    @FXML private TextField investmentPeriodField;
+    @FXML private TextField expectedReturnRateField;
+    @FXML private Label resultLabel;
+    @FXML private Label investedAmountLabel;
+    @FXML private PieChart pieChart;
+    @FXML private AnchorPane sipRoot;
 
     @FXML
     public void initialize() {
-        root.getStylesheets().add(getClass().getResource("/CSSS/sip.css").toExternalForm());
+        sipRoot.getStylesheets().add(getClass().getResource("/CSSS/sip.css").toExternalForm());
     }
 
     @FXML
-    private void calculateSIP() {
+    private void calculateSIP(ActionEvent event) {
         try {
-            // Get input values
             double monthlyInvestment = Double.parseDouble(monthlyInvestmentField.getText());
-            double annualReturnRate = Double.parseDouble(returnRateField.getText()) / 100; // Convert % to decimal
-            double monthlyReturnRate = annualReturnRate / 12;
-            int investmentPeriodYears = Integer.parseInt(investmentPeriodField.getText());
-            int months = investmentPeriodYears * 12;
+            int period = Integer.parseInt(investmentPeriodField.getText());
+            double rate = Double.parseDouble(expectedReturnRateField.getText());
 
-            // Total Investment
-            double totalInvestment = monthlyInvestment * months;
+            int months = period * 12;
+            double monthlyRate = rate / 12 / 100;
 
-            // SIP Formula: FV = P × [(1 + r)^n - 1] × (1 + r) / r
-            double futureValue = monthlyInvestment * (Math.pow(1 + monthlyReturnRate, months) - 1) * (1 + monthlyReturnRate) / monthlyReturnRate;
-            double estimatedReturns = futureValue - totalInvestment;
+            double futureValue = monthlyInvestment * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+            double investedAmount = monthlyInvestment * months;
+            double returns = futureValue - investedAmount;
 
-            // Display results
-            totalInvestmentLabel.setText(String.format("₹ %.2f", totalInvestment));
-            estimatedReturnsLabel.setText(String.format("₹ %.2f", estimatedReturns));
-            totalValueLabel.setText(String.format("₹ %.2f", futureValue));
+            resultLabel.setText("Future Value: ₹" + String.format("%.2f", futureValue));
+            investedAmountLabel.setText("Total Invested: ₹" + String.format("%.2f", investedAmount));
 
+            pieChart.getData().clear();
+            pieChart.getData().add(new PieChart.Data("Invested Amount", investedAmount));
+            pieChart.getData().add(new PieChart.Data("Estimated Returns", returns));
         } catch (NumberFormatException e) {
-            totalInvestmentLabel.setText("Invalid input!");
-            estimatedReturnsLabel.setText("");
-            totalValueLabel.setText("");
+            resultLabel.setText("Please enter valid numbers.");
+            investedAmountLabel.setText("");
         }
     }
+
 
     @FXML
     private void backToMain() throws IOException {

@@ -2,6 +2,7 @@ package calc.calcappfx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
@@ -62,6 +63,24 @@ public class FirstFrameController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void openEmiCalculator() {
+        try {
+            mainApp.changePage("emi-calculator.fxml", "EMI calculator");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void openLumpsumCalculator() {
+        try {
+            mainApp.changePage("lumpsum.fxml", "Lumpsum calculator");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void logoutAction(){

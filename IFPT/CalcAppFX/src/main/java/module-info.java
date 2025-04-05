@@ -9,6 +9,7 @@ module calc.calcappfx {
     requires org.mongodb.bson;
     requires jbcrypt;
     requires org.mongodb.driver.core;
+    requires java.desktop;
 
     opens calc.calcappfx to javafx.fxml;
     exports calc.calcappfx;

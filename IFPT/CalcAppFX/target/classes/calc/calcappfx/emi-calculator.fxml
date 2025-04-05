@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="emiRoot" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="calc.calcappfx.EmiCalculatorController">
+    <children>
+        <VBox spacing="10" alignment="CENTER" layoutX="30" layoutY="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+            <Label text="EMI Calculator" styleClass="heading"/>
+
+            <GridPane hgap="10" vgap="10">
+                <Label text="Loan Amount:" GridPane.rowIndex="0"/>
+                <TextField fx:id="principalField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Annual Interest Rate (%):" GridPane.rowIndex="1"/>
+                <TextField fx:id="rateField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Tenure (in months):" GridPane.rowIndex="2"/>
+                <TextField fx:id="tenureField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Button text="Calculate EMI" onAction="#calculateEMI"/>
+
+            <Label fx:id="emiLabel"/>
+            <Label fx:id="totalPaymentLabel"/>
+            <Label fx:id="interestLabel"/>
+
+            <PieChart fx:id="emiPieChart" prefHeight="250" prefWidth="400"/>
+
+            <Button text="Back" onAction="#goBack"/>
+        </VBox>
+    </children>
+</AnchorPane>
