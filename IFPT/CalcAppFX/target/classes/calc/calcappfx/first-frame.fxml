@@ -74,5 +74,15 @@
             <Button onAction="#openLumpsumCalculator" prefHeight="30.0" prefWidth="215.0" styleClass="custom-button" text="Lumpsum Calculator" />
          </children>
       </VBox>
+      <VBox alignment="CENTER" layoutX="649.0" layoutY="534.0" prefHeight="154.0" prefWidth="280.0" spacing="20" style="-fx-background-color: #34495E; -fx-padding: 30px; -fx-border-radius: 15px; -fx-background-radius: 15px;">
+         <children>
+            <Button text="Inflation Calculator" onAction="#openInflationCalculator" prefHeight="30.0" prefWidth="215.0" styleClass="custom-button"  />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="345.0" layoutY="534.0" prefHeight="154.0" prefWidth="280.0" spacing="20" style="-fx-background-color: #34495E; -fx-padding: 30px; -fx-border-radius: 15px; -fx-background-radius: 15px;">
+         <children>
+            <Button fx:id="valuationButton" text="Valuation Calculator" onAction="#openValuationCalculator"   prefHeight="30.0" prefWidth="215.0" styleClass="custom-button"  />
+         </children>
+      </VBox>
     </children>
 </AnchorPane>

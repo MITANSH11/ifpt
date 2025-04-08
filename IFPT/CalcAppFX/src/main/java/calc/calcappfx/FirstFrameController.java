@@ -80,6 +80,22 @@ public class FirstFrameController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void openInflationCalculator() {
+        try {
+            mainApp.changePage("inflation-calculator.fxml", "Inflation calculator");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void openValuationCalculator() {
+        try {
+            mainApp.changePage("valuation-calculator.fxml", "Valuation Calculator");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @FXML

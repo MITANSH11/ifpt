@@ -2,37 +2,51 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="emiRoot" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="calc.calcappfx.EmiCalculatorController">
+<AnchorPane fx:id="emiRoot" prefHeight="601.0" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="calc.calcappfx.EmiCalculatorController">
     <children>
-        <VBox spacing="10" alignment="CENTER" layoutX="30" layoutY="20">
-            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+        <VBox alignment="CENTER" layoutX="30" layoutY="20" prefHeight="498.0" prefWidth="440.0" spacing="10">
+            <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
 
-            <Label text="EMI Calculator" styleClass="heading"/>
+            <Label styleClass="heading" text="EMI Calculator" />
 
-            <GridPane hgap="10" vgap="10">
-                <Label text="Loan Amount:" GridPane.rowIndex="0"/>
-                <TextField fx:id="principalField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <GridPane hgap="10" prefHeight="114.0" prefWidth="412.0" vgap="10">
+                <Label text="Loan Amount:" GridPane.rowIndex="0" />
+                <TextField fx:id="principalField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                <Label text="Annual Interest Rate (%):" GridPane.rowIndex="1"/>
-                <TextField fx:id="rateField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Annual Interest Rate (%):" GridPane.rowIndex="1" />
+                <TextField fx:id="rateField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label text="Tenure (in months):" GridPane.rowIndex="2"/>
-                <TextField fx:id="tenureField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Tenure (in months):" GridPane.rowIndex="2" />
+                <TextField fx:id="tenureField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
             </GridPane>
 
-            <Button text="Calculate EMI" onAction="#calculateEMI"/>
+            <Button onAction="#calculateEMI" text="Calculate EMI" />
 
-            <Label fx:id="emiLabel"/>
-            <Label fx:id="totalPaymentLabel"/>
-            <Label fx:id="interestLabel"/>
+            <Label fx:id="emiLabel" />
+            <Label fx:id="totalPaymentLabel" />
+            <Label fx:id="interestLabel" />
 
-            <PieChart fx:id="emiPieChart" prefHeight="250" prefWidth="400"/>
-
-            <Button text="Back" onAction="#goBack"/>
+            <PieChart fx:id="emiPieChart" prefHeight="250" prefWidth="400" />
         </VBox>
+
+         <Button layoutX="30.0" layoutY="518.0" onAction="#goBack" text="Back" />
     </children>
 </AnchorPane>

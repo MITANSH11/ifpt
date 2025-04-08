@@ -34,11 +34,10 @@ public class TaxController {
             double other = parse(otherDeductionField.getText());
 
             double totalDeduction = d80C + d80D + d80E + d80G + other;
-            double taxableIncome = Math.max(0, income - totalDeduction - 50000); // 50k standard deduction
+            double taxableIncome = Math.max(0, income - totalDeduction - 50000); // standard deduction
 
             double tax = calculateBasedOnRegime(taxableIncome);
-            double rebate = 0;
-            if (taxableIncome <= 700000) rebate = Math.min(tax, 25000);
+            double rebate = taxableIncome <= 700000 ? Math.min(tax, 25000) : 0;
 
             tax -= rebate;
             double cess = tax * 0.04;
@@ -58,7 +57,7 @@ public class TaxController {
             deductionChart.getData().add(new PieChart.Data("Rebate", rebate));
 
         } catch (NumberFormatException e) {
-            resultArea.setText("Please enter valid values.");
+            resultArea.setText("Please enter valid numbers.");
         }
     }
 
@@ -78,7 +77,6 @@ public class TaxController {
             else if (income <= 1200000) tax = 45000 + (income - 900000) * 0.15;
             else tax = 90000 + (income - 1200000) * 0.2;
         }
-
         return tax;
     }
 
@@ -89,6 +87,7 @@ public class TaxController {
             return 0;
         }
     }
+
     @FXML
     private void backToMain() throws IOException {
         mainApp.changePage("first-frame.fxml", "Calculators");

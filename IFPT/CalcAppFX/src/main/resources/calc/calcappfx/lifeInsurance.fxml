@@ -5,16 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="calc.calcappfx.LifeInsuranceController">
+<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.calcappfx.LifeInsuranceController">
 
     <!-- Title -->
-    <Label layoutX="210.0" layoutY="34.0" styleClass="title-label" text="Life Insurance Calculator" />
+    <Label layoutX="245.0" layoutY="35.0" styleClass="title-label" text="Life Insurance Calculator" />
 
     <!-- Age Input -->
-    <Label layoutX="50.0" layoutY="100.0" styleClass="input-label" text="Your Age:" />
+    <Label layoutX="114.0" layoutY="102.0" styleClass="input-label" text="Your Age:" />
     <TextField fx:id="ageField" layoutX="250.0" layoutY="98.0" prefWidth="250.0" styleClass="input-field" />
 
     <!-- Coverage Amount -->
@@ -22,18 +19,16 @@
     <TextField fx:id="coverageField" layoutX="250.0" layoutY="148.0" prefWidth="250.0" styleClass="input-field" />
 
     <!-- Policy Term -->
-    <Label layoutX="50.0" layoutY="200.0" styleClass="input-label" text="Policy Term (Years):" />
+    <Label layoutX="62.0" layoutY="202.0" styleClass="input-label" text="Policy Term (Years):" />
     <TextField fx:id="termField" layoutX="250.0" layoutY="198.0" prefWidth="250.0" styleClass="input-field" />
 
     <!-- Calculate Button -->
-    <Button fx:id="calculateButton" layoutX="250.0" layoutY="250.0" onAction="#calculatePremium"
-            styleClass="calculate-button" text="Calculate" />
+    <Button fx:id="calculateButton" layoutX="250.0" layoutY="250.0" onAction="#calculatePremium" styleClass="calculate-button" text="Calculate" />
 
     <!-- Result -->
     <Label layoutX="50.0" layoutY="320.0" styleClass="result-label" text="Monthly Premium (₹):" />
-    <Label fx:id="premiumResultLabel" layoutX="250.0" layoutY="320.0" styleClass="result-value" text="0.00" />
+    <Label fx:id="premiumResultLabel" layoutX="259.0" layoutY="320.0" styleClass="result-value" text="0.00" />
 
     <!-- Back Button -->
-    <Button fx:id="backbutton" layoutX="50.0" layoutY="431.0" onAction="#backtomainpage"
-            styleClass="back-button" text="Back" />
+    <Button fx:id="backbutton" layoutX="30.0" layoutY="437.0" onAction="#backtomainpage" styleClass="back-button" text="Back" />
 </AnchorPane>
