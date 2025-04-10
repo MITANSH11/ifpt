@@ -1,0 +1,16 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <jar>ifpt.jar</jar>
+  <outfile>ifpt.exe</outfile>
+  <errTitle>IFPT Error</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <bundledJrePath>jre</bundledJrePath>   <!-- path to local JRE -->
+  <minVersion>1.8.0</minVersion>
+  <maxVersion></maxVersion>
+  <opt>--add-modules=javafx.controls,javafx.fxml</opt>
+  <icon>logo.ico</icon>  <!-- optional -->
+  <headerType>gui</headerType>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+</launch4jConfig>
