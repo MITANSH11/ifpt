@@ -5,7 +5,8 @@ CREATED BY
 ###
 ***A JavaFX-based desktop application that provides multiple financial calculators*** 
 
-IF YOU WANT TO RUN DIRECTLY GO TO "IFPT/CalcAppFX/app" DOWNLOAD "ifpt.exe" file 
+IF YOU WANT TO RUN DIRECTLY  DOWNLOAD "ifpt.exe" file 
+
 or else
 
 (NOTE: U NEED JAVA FX TO RUN THIS PROGRAM)
