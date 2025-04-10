@@ -10,9 +10,11 @@ public class MongoDBUtil {
     private static MongoDatabase database;
 
     static {
-        // Establish connection to MongoDB
-        mongoClient = MongoClients.create("mongodb://localhost:27017");
-        database = mongoClient.getDatabase("ifpt_DB");
+        // Replace <password> with your actual MongoDB Atlas password
+        String uri = "mongodb+srv://ifptuser:mitansh12980@cluster0.cqa8qoq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+        mongoClient = MongoClients.create(uri);
+        database = mongoClient.getDatabase("ifpt_DB"); // Your database name
     }
 
     public static MongoDatabase getDatabase() {
@@ -25,5 +27,3 @@ public class MongoDBUtil {
         }
     }
 }
-
-
