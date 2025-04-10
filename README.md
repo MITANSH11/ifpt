@@ -3,16 +3,12 @@ Investment and Financial Planning Tracker (IFPT)
 CREATED BY
           -MITANSH PRAJAPATI & RUDRA BHATT
 ###
-
 ***A JavaFX-based desktop application that provides multiple financial calculators*** 
 
+IF YOU WANT TO RUN DIRECTLY GO TO "IFPT/CalcAppFX/app" DOWNLOAD "ifpt.exe" file 
+or else
 
-***DOWNLOAD THE JAR FILE "ifpt.jar" ,
-SIGN-IN THE GUI AND THEN LOGIN,
-IT IS CONNECTED TO CLOUD MONGODB,
-THEN YOU CAN USE THE GUI...***
-
- (NOTE: U NEED JAVA FX TO RUN THIS PROGRAM)
+(NOTE: U NEED JAVA FX TO RUN THIS PROGRAM)
 ***Run in IntelliJ IDEA
 
 - Open the project in IntelliJ IDEA
