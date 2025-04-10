@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="assetRoot" prefHeight="602.0" prefWidth="599.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="calc.calcappfx.AssetAllocationController">
+<AnchorPane fx:id="assetRoot" prefHeight="602.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.calcappfx.AssetAllocationController">
     <children>
         <VBox alignment="TOP_CENTER" spacing="15" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="143.0" styleClass="heading" text="Asset Allocation Calculator" />
@@ -26,7 +26,7 @@
                     <Label text="Your Age:" />
                     <TextField fx:id="ageField" />
 
-                    <Button onAction="#calculateAllocation" styleClass="btn" text="Calculate Allocation" />
+                    <Button onAction="#calculateAllocation" prefHeight="26.0" prefWidth="150.0" styleClass="btn" text="Calculate Allocation" />
                     <Button fx:id="backButton" onAction="#backToMain" styleClass="back-button" text="Back">
                   <VBox.margin>
                      <Insets top="279.0" />
